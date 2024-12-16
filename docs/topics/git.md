@@ -1,11 +1,11 @@
-### github
+### Github
 소스코드 호스팅 서비스 제공
 웹 호스팅 : 웹 서버 대여
 
 <img width="346" alt="image" src="https://github.com/user-attachments/assets/85625c88-e1f9-43d9-ac5e-2d7f84014985" />
 
 
-### git 명령어
+### Git 명령어
 - 원격 저장소에 잘못 업로드 된 폴더 또는 파일 삭제
 ```text
 git rm -r --cached .
@@ -43,7 +43,7 @@ git pull origin master(브랜치명)
 - 설정 목적 : 협업 중 서로 버전이 다를 경우 충돌 방지
 - .gitignore파일은 최상위 폴더에 생성되어야 한다
 
-### wsl
+### WSL
 Linux용 Windows 하위 시스템.   
 wsl를 사용하여 Ubuntu, Debian, Kali 등과 같은 다양한 Linux 배포를 설치하고 실행한다
 
@@ -53,5 +53,5 @@ git에 대해서 공부했었고 사용도 해봤는데, 퀴즈를 풀면서 제
 부끄럽지만 사용한지 오래되다보니 pull이랑 push조차 헷갈렸다. 반성하고 복기하며 부족한 부분을 채웠다.
 rebase는 직접 협업하면서 더 경험해봐야 익숙해질거 같다.
 
-### follow up
+### Follow up
 현재 노트북에 wsl2 설치된 상태이고, docker로 했던거 같은데 기억이 잘 안난다.. 다시 확인해보기
