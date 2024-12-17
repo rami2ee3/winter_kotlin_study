@@ -2,8 +2,6 @@
 소스코드 호스팅 서비스 제공
 웹 호스팅 : 웹 서버 대여
 
-<img width="346" alt="image" src="https://github.com/user-attachments/assets/85625c88-e1f9-43d9-ac5e-2d7f84014985" />
-
 
 ### Git 명령어
 - 원격 저장소에 잘못 업로드 된 폴더 또는 파일 삭제

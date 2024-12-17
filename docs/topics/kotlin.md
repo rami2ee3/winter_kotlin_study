@@ -2,11 +2,6 @@
 코틀린은 자바의 단점을 보완하고자 나온 언어이다   
 변수보단 상수를 쓰는게 실수나 버그를 줄일 수 있다
 
-### Kotlin 기초 문법
-
-
-
-
 ### Java와 차이점
 - Null
     - java : null을 허용한다
@@ -25,10 +20,20 @@
        println(fullName) // -> 홍한석봉
      }
      ```
-- 확장함수
-  - java : 상속 이용
+- 확장함수 지원 여부
   - kotlin : 기존 클래스에 새로운 메서드 추가하는 것처럼 사용
      ```kotlin
-     fun 클래스명.함수명
+     // 형태 : fun 클래스명.함수명
+    
+    //String 확장함수
+    fun String.addExclamation(): String {
+    return this + "!"             //this는 확장 대상 클래스의 인스턴스
+    }
+
+    fun main() {
+    val text = "Hello"
+    println(text.addExclamation())  // 출력: Hello!
+    }
+
      ```
 
