@@ -7,22 +7,22 @@
 
 ### Git 명령어
 - 원격 저장소에 잘못 업로드 된 폴더 또는 파일 삭제
-```text
+```shell
 git rm -r --cached .
 ```
 
 - 새로운 브랜치를 생성하고 이동하는 명령어
-```text
+```shell
 git checkout -b new
 ```
 
 - merge 충돌이 발생했을 때 취소하는 명령어
-```text
+```shell
 git merge --abort
 ```
 
 - 원격 저장소 url 가져오기
-```text
+```shell
 git remote add origin + 업로드 할 git 주소
 git pull origin master(브랜치명)
 ```
@@ -44,7 +44,7 @@ git pull origin master(브랜치명)
 - .gitignore파일은 최상위 폴더에 생성되어야 한다
 
 ### WSL
-Linux용 Windows 하위 시스템.   
+Linux용 Windows 하위 시스템   
 wsl를 사용하여 Ubuntu, Debian, Kali 등과 같은 다양한 Linux 배포를 설치하고 실행한다
 
 
