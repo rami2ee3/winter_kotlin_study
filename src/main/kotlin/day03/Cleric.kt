@@ -1,34 +1,27 @@
 package day03
-class Cleric(var name : String,
-             var hp : Int = 50,
-             val maxHp : Int = 50,
-             var mp: Int = 10,
-             val maxMp : Int = 10,) {
 
+const val maxHp: Int = 50
+const val maxMp: Int = 10
 
+class Cleric(
+    var name: String,
+    var hp: Int = 50,
+    var mp: Int = 10,
+) {
     fun selfAid() {
-        if (hp < maxHp) {
-            hp+=5
-            mp-=5
+        if (mp < 5) {
+            println("mp가 부족합니다")
+        } else if (hp == maxHp) {
+            println("hp가 최대치 입니다")
+        } else {
+            mp -= 5
+            hp = maxHp      //mp -5 한번에 최대 hp까지 풀 충전 완료
+            println("hp가 회복되었습니다")
         }
     }
 
-//    fun pray(time : Int): Int {
-//        // val range = 0..2
-//        val num = (0..2).random()
-//        var recoveryMp = time + num      // 3 + 0,1,2
-//
-//        if ((recoveryMp + hp) > maxHp && (recoveryMp <= maxMp)) {  // 회복포인트랑 현재 mp랑 더해서 최대 mp보다 작거나 같아야 함
-//            var extraNum = (recoveryMp + hp) - maxHp
-//            return recoveryMp - extraNum              // mp49일때 3이면 52되니까 50까지만 회복하고 / 회복량은 1로 표시되게
-//        }                                             // r(time 3+random 0) + mp가 49
-//        return recoveryMp                             // 3+49 = 52 - 50 = 2 extra 인데, r3-2 =1
-//    }
-
-
-    fun pray(time : Int) : Int {
-//        val num = (0..2).random()
-        val num = 2
+    fun pray(time: Int): Int {
+        val num = (0..2).random()
         var recoveryMp = time + num
         var currentMp = mp
         if (recoveryMp + currentMp > maxMp) {
@@ -37,7 +30,6 @@ class Cleric(var name : String,
         return recoveryMp
     }
 }
-
 
 fun main() {
     var hero = Cleric("용사")
