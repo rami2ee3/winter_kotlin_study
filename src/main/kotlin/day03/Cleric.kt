@@ -1,21 +1,32 @@
-//package day03
-//class Cleric() {
-//    var name = ""
-//    var hp = 50
-//    val maxHp = 50
-//    var mp = 10
-//    val maxMp = 10
-//
-//    fun selfAid() {
-//        mp --5
-//        hp ++5
-//        //maxHp까지
-//    }
-//
-//    fun pray() {
-//        //mp 회복량은 기도한 시간(초)에 랜덤하게 0 ~ 2포인트의 보정을 한 양이다 (3초 기도하면 회복량은 3 ~ 5 포인트).
-//        // 단, 최대 MP 보다 더 회복하는 것은 불가능 하다.
-//        // 인수에 “기도할 시간(초)"를 지정할 수 있고, 리턴 값은 “실제로 회복된 MP 양" 을 반환
-//    }
-//
-//}
+package day03
+class Cleric(var name : String,
+             var hp : Int = 50,
+             val maxHp : Int = 50,
+             var mp: Int = 10,
+             val maxMp : Int = 10,) {
+
+    fun selfAid() {
+        if (hp < maxHp) {
+            hp+=5
+            mp-=5
+        }
+    }
+
+    fun pray(time : Int): Int {
+        val range = 0..2
+        var recoveryMp = time + range.random()        // 3 + 0,1,2
+
+        if ((recoveryMp + mp) > maxMp) {              // 회복포인트랑 현재 mp랑 더해서 최대 mp보다 작거나 같아야 함
+            var extraNum = (recoveryMp + mp)-maxMp
+            return recoveryMp - extraNum              //49일때 3이면 52되니까 50까지만 회복하고 / 회복량은 1로 표시되게
+        }                                             // r(time 3+random 0) + mp가 49일때
+        return recoveryMp                             // 3+49 = 52 - 50 = 2 extra 인데, r3-2 =1
+    }
+
+}
+
+fun main() {
+    var hero = Cleric("용사")
+    hero.selfAid()
+    hero.pray(3)
+}
