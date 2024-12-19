@@ -1,7 +1,7 @@
 package day03
 
-const val maxHp: Int = 50
-const val maxMp: Int = 10
+const val MAX_HP: Int = 50
+const val MAX_MP: Int = 10
 
 class Cleric(
     var name: String,
@@ -11,11 +11,11 @@ class Cleric(
     fun selfAid() {
         if (mp < 5) {
             println("mp가 부족합니다")
-        } else if (hp == maxHp) {
+        } else if (hp == MAX_HP) {
             println("hp가 최대치 입니다")
         } else {
             mp -= 5
-            hp = maxHp      //mp -5 한번에 최대 hp까지 풀 충전 완료
+            hp = MAX_HP      //mp -5 한번에 최대 hp까지 풀 충전 완료
             println("hp가 회복되었습니다")
         }
     }
@@ -24,8 +24,8 @@ class Cleric(
         val num = (0..2).random()
         var recoveryMp = time + num
         var currentMp = mp
-        if (recoveryMp + currentMp > maxMp) {
-            return maxMp - currentMp
+        if (recoveryMp + currentMp > MAX_MP) {
+            return MAX_MP - currentMp
         }
         return recoveryMp
     }

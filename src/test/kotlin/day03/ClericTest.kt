@@ -17,7 +17,7 @@ class ClericTest {
     }
 
     @Test
-    fun selfAid2() {
+    fun selfAbidFull() {
         //given 준비
         val cleric = Cleric("용사", hp = 50, mp = 5)
         //when 실행
@@ -27,7 +27,7 @@ class ClericTest {
     }
 
     @Test
-    fun selfAid3() {
+    fun selfAidLess() {
         //given 준비
         val cleric = Cleric("용사", hp = 30, mp = 3)
         //when 실행
