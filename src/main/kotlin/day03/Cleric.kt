@@ -1,13 +1,19 @@
 package day03
 
-const val MAX_HP: Int = 50
-const val MAX_MP: Int = 10
+//object Const {}
+
 
 class Cleric(
     var name: String,
-    var hp: Int = 50,
-    var mp: Int = 10,
+    var hp: Int = MAX_HP,
+    var mp: Int = MAX_MP,
 ) {
+
+    companion object {
+        const val MAX_HP: Int = 50
+        const val MAX_MP: Int = 10
+    }
+
     fun selfAid() {
         if (mp < 5) {
             println("mp가 부족합니다")
