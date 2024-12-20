@@ -1,18 +1,20 @@
 package day03
 
-//object Const {}
-
-
 class Cleric(
     var name: String,
     var hp: Int = MAX_HP,
-    var mp: Int = MAX_MP,
+    var mp: Int = MAX_MP
 ) {
+    override fun toString(): String {
+        return "name = '$name', hp = $hp, mp = $mp"
+    }
 
     companion object {
         const val MAX_HP: Int = 50
         const val MAX_MP: Int = 10
     }
+//    constructor(name: String) : this(name, MAX_HP, MAX_MP)
+//    기본 생성자에서 처리하고 있어서 재정의하지 않아도 됨
 
     fun selfAid() {
         if (mp < 5) {
@@ -35,10 +37,21 @@ class Cleric(
         }
         return recoveryMp
     }
+
 }
+
 
 fun main() {
     var hero = Cleric("용사")
     hero.selfAid()
     hero.pray(3)
+
+    var cleric1: Cleric = Cleric(name = "아서스", hp = 40, mp = 5)
+    var cleric2: Cleric = Cleric("아서스", hp = 35)
+    var cleric3: Cleric = Cleric("아서스")
+
+    println(cleric1.toString())
+    println(cleric2.toString())
+    println(cleric3.toString())
+
 }
