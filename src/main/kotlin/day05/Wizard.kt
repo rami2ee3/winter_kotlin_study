@@ -30,16 +30,17 @@ class Wizard(
     var name: String = initialName
         set(value) {
             validateName(value)
-            field = value
+            field = value                       //field는 getter, setter에서만 사용할 수 있는 내부 저장소로 속성 값 저장.
         }
 
-   var hp: Int = initialHp
-       set(value) {
-           field = if (value < 0) 0 else value  //field는 getter, setter에서만 사용할 수 있는 내부 저장소로 속성 값 저장.
-       }
+   var hp: Int = if (initialHp < 0) 0 else initialHp
+
 }
 
 fun main() {
     val wand = Wand(name = "지팡이", power = 80.0)
-    val wizard = Wizard(initialName = "간달프", initialHp = 90, mp = 30, wand = wand)
+    val wizard = Wizard(initialName = "간달프", initialHp = -10, mp = 30, wand = wand)
+
+    println(wizard.initialHp)
+    println(wizard.hp)
 }
