@@ -2,11 +2,11 @@ package day05
 
 class Human(val name: String, var age: Int) {
     fun bye() {
-
+    TODO()
     }
 
     fun die() {
-
+    TODO()
     }
 }
 
