@@ -1,7 +1,8 @@
 package day05
 
-import junit.framework.Assert.assertEquals
+import org.junit.Assert.assertEquals
 import org.junit.Assert
+
 import org.junit.Test
 
 class WizardTest {
@@ -35,7 +36,7 @@ class WizardTest {
     @Test
     fun checkWandPowerValid() {
         val wand = Wand(name = "지팡이", power = 50.0)
-        assertEquals(50.0, wand.power)
+        assertEquals(50.0, wand.power, 0.0)
     }
 
     @Test
