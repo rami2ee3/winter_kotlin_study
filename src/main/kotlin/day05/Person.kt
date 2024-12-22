@@ -22,7 +22,9 @@ fun main() {
         han to 25
     )
 
-    for ((name, age) in goodperson) {
+    for (entry in goodperson.entries) {
+        val name = entry.key
+        val age = entry.value
         println("${name}의 나이는 ${age}살")
     }
 }
