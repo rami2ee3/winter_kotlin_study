@@ -40,6 +40,6 @@ class Wizard(
 }
 
 fun main() {
-    val wand = Wand(initialName = "지팡이", initialPower = 80.0)
+    val wand = Wand(name = "지팡이", power = 80.0)
     val wizard = Wizard(initialName = "간달프", initialHp = 90, mp = 30, wand = wand)
 }
