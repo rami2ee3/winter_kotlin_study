@@ -3,12 +3,12 @@ package day05
 지팡이의 마력은 0.5 이상 100.0 이하여야 한다.
 마법사의 지팡이는 null 일 수 없다.*/
 class Wand(
-    val initialName: String,
-    val initialPower: Double,
+    name: String,
+    power: Double,
 ) {
     init {
-        validateName(initialName)
-        validatePower(initialPower)
+        validateName(name)
+        validatePower(power)
     }
     companion object {
         private val NAME_LENGTH = 3
@@ -23,13 +23,13 @@ class Wand(
         }
     }
 
-    var name: String = initialName
+    var name: String = name
         set(value) {
             validateName(value) // 이름 변경 시 검증
             field = value
         }
 
-    var power: Double = initialPower
+    var power: Double = power
         set(value) {
             validatePower(value)    // init에서 검증은 초기화 시점에만 진행되기 때문에, 값 변경 시 set에서도 검증해주어야 한다
             field = value

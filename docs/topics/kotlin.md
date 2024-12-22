@@ -79,7 +79,7 @@ this.age = age
 클래스의 모든 프로퍼티 및 생성자의 매개변수에 접근 가능   
 
 
-![img.png](img.png)
+![img.png](img/img.png)
 객체 생성 시 생성자의 매개변수 name과 age에 전달된 값이 임시 변수로 생성된다   
 init 블록에서 생성자 매개변수를 클래스의 프로퍼티 name과 age에 할당한다
 
