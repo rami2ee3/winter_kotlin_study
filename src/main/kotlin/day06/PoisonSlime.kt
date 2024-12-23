@@ -29,7 +29,7 @@ class PoisonSlime(suffix: String, hp: Int) : Slime(suffix, hp) {
 
         if (poisonCount > 0) {
             println("추가로, 독 포자를 살포했다!")
-            var damegeHp = hero.hp/5
+            var damegeHp = hero.maxHp/5
             hero.hp -= damegeHp
             println("${damegeHp}의 데미지")
             poisonCount -= 1
@@ -39,11 +39,11 @@ class PoisonSlime(suffix: String, hp: Int) : Slime(suffix, hp) {
 }
 
 fun main() {
-    val hero = Hero("다덤벼")
+    val hero = Hero("다덤벼", hp = 100)
     val poisonSlime = PoisonSlime("악당", 99)
 
     for (i in 1..8) {
         poisonSlime.attack(hero)
     }
-    println(hero.hp)
+    println(hero.hp)    //todo 마이너스값 처리
 }
