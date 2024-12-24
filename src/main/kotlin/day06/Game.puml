@@ -16,11 +16,11 @@ abstract class Character {
 }
 
 interface Attackable {
-    {abstrack} +attack()
+    {abstract} +attack()
 }
 
 interface Runnable {
-    {abstrack} +run()
+    {abstract} +run()
 }
 
 @enduml

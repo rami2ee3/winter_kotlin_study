@@ -18,7 +18,7 @@ mp가 부족하면 "마나가 부족합니다" 출력
 */
 
 open class Wizard(
-    name: String,    //todo 수정
+    name: String,
     hp: Int,    //val, var없으면 getter, setter 안 생김
     mp: Int = 100,
     wand: Wand,
@@ -42,7 +42,9 @@ open class Wizard(
             field = value                       //field는 getter, setter에서만 사용할 수 있는 내부 저장소로 속성 값 저장.
         }
 
-    override var hp: Int = if (hp < 0) 0 else hp // 파라미터의 hp랑 다른거임!
+    override var hp: Int = if (hp < 0) 0 else hp
+    // 파라미터의 hp랑 다른거임!
+
     var mp: Int = mp
 
     override fun heal(hero: Hero): Unit {
