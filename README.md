@@ -59,7 +59,7 @@
   - [A.kt](src/main/kotlin/day08/A.kt) - 연습문제
   - [B.kt](src/main/kotlin/day08/B.kt) - 연습문제
   - [X.kt](src/main/kotlin/day08/X.kt) - 연습문제
-  - [Star3.puml](src/main/kotlin/day08/AssetUml.puml) - 연습문제 uml
+  - [Star3.puml](src/main/kotlin/day08/Star3.puml) - 연습문제 uml
 - Day 09
   - [Instance.java](src/main/kotlin/day09/Instance.java) - 동등성 비교_자바
   - [Instance.kt](src/main/kotlin/day09/Instance.kt) - 동등성 비교_코틀린

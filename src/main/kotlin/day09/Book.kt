@@ -22,6 +22,7 @@ data class Book(
     val author: String,
     val publishedDate: LocalDateTime = LocalDateTime.now()
 ) : Comparable<Book> {
+
     override fun equals(other: Any?): Boolean {
         if (this === other) return true     // 참조(메모리 주소)가 같으면 동일한 객체
         if (javaClass != other?.javaClass) return false
@@ -30,15 +31,14 @@ data class Book(
 
         if (title != other.title) return false
         if (author != other.author) return false
-        if (publishedDate != other.publishedDate) return false
+        if (publishedDate.toLocalDate() != other.publishedDate.toLocalDate()) return false
 
         return true
     }
 
     override fun hashCode(): Int {
         var result = title.hashCode()
-        result = 31 * result + author.hashCode()
-        result = 31 * result + publishedDate.hashCode()
+        result = 31 * result + publishedDate.toLocalDate().hashCode()
         return result
     }
 
@@ -47,6 +47,8 @@ data class Book(
         return other.publishedDate.compareTo(this.publishedDate)
         //this 객체와 other 객체를 비교하여 this가 other보다 크면 양수, 작으면 음수, 같으면 0을 반환
         //other 객체가 먼저 오고, this 객체가 뒤에 오도록 설정하면 내림차순으로 비교 된다
+        //this가 book2, other가 book1
+        //반환값이 1이지만 내림차순을 위해 반대로 -1 반환
     }
 
     //    fun deepCopy() = Book(title, author, publishedDate) // 불변객체만 포함될 경우 이렇게 쓸 수 있지만, 클래스가 확장될 경우를 대비해서 깊은 복사를 보장해야 한다
@@ -58,7 +60,10 @@ fun main() {
     val book1 = Book("Book1", "Author1", LocalDateTime.of(2023, 1, 1, 0, 0))
     val book2 = Book("Book2", "Author2", LocalDateTime.of(2024, 1, 1, 0, 0))
     val book3 = book2.deepCopy()
-    println(book3 === book2) //f
+    println(book3 === book2) //false
     val books = listOf(book1, book2, book3).sortedByDescending { it.publishedDate }
     println(books)
+
+    println(book2 < book1)    // true. 내림차순이라 book2가 최신이므로 작다고 간주
+    println(book2.compareTo(book1))
 }

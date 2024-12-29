@@ -9,8 +9,8 @@ class BookTest {
 
     @Test
     fun checkTitleAndPublishedDateEquals() {
-     val bookA = Book("Book1", "Author1", LocalDateTime.of(2024, 1, 1, 0, 0))
-     val bookB = Book("Book1", "Author1", LocalDateTime.of(2024, 1, 1, 0, 0))
+     val bookA = Book("Book1", "Author1", LocalDateTime.of(2024, 1, 1, 7, 30))
+     val bookB = Book("Book1", "Author1", LocalDateTime.of(2024, 1, 1, 4, 0))
         assertTrue(bookA == bookB)
         assertTrue(bookA.hashCode() == bookB.hashCode())
     }
@@ -20,6 +20,7 @@ class BookTest {
      val book1 = Book("Book1", "Author1", LocalDateTime.of(2023, 1, 1, 0, 0))
      val book2 = Book("Book2", "Author2", LocalDateTime.of(2024, 1, 1, 0, 0))
         assertTrue(book2.publishedDate > book1.publishedDate)
+        assertTrue(book2.compareTo(book1) < 0)
     }
 
  @Test
