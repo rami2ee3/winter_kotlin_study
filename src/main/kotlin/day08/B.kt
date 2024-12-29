@@ -1,6 +1,6 @@
 package day08
 
-class B: Y() {
+class B : Y() {
     override fun b() {
         println("Bb")
     }

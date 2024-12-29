@@ -4,6 +4,6 @@ interface X {
     fun a()
 }
 
-abstract class Y: X {
+abstract class Y : X {
     abstract fun b()
 }
