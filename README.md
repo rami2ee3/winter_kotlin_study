@@ -27,7 +27,7 @@
     
     
 ## 📚 주제별 정리
-- [git](docs/topics/git.md)
+- [git](docs/topics/Git)
 - [kotlin](docs/topics/kotlin.md)
 
 ## 🔍 참고 자료
