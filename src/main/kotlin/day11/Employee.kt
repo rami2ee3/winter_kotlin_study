@@ -13,7 +13,7 @@ fun main() {
     val json = Json.encodeToString(Department("총무부", Employee("홍길동", 41)))
     println(json)
 
-    val file = File("company.txt")
+    val file = File("C:\\koko\\winter_kotlin_study\\src\\main\\kotlin\\day11\\company.txt")
     file.writeText(json)
 
     val obj = Json.decodeFromString<Department>(json)
@@ -33,7 +33,7 @@ data class Employee (val name: String, val age: Int) {
 data class Department(var name: String, var leader: Employee) {
     fun toJson(): String = """
         "name": "$name",
-        "leader": "$leader"
+        "leader": "${leader.toJson()}"
     """.trimIndent()
 }
 

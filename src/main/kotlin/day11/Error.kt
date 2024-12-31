@@ -8,6 +8,7 @@ fun main() {
     try {
         num = numString.toInt()
     } catch (e: Exception) {
+        println("변환 실패: ${e.message}")
         num = 0
     }
     println(num)

@@ -5,9 +5,11 @@ import java.io.FileNotFoundException
 
 
 fun main() {
+    val sample = File("C:\\koko\\winter_kotlin_study\\src\\main\\kotlin\\day11\\save.txt")
+    val text = "뿌이뿌이뿌"
+    sample.writeText(text)
     val file = DefaultFileOperations()
-
-    file.copy("C:\\koko\\winter_kotlin_study\\src\\main\\save.txt", "C:\\koko\\winter_kotlin_study\\src\\main\\kotlin\\day11\\text.txt")
+    file.copy("C:\\koko\\winter_kotlin_study\\src\\main\\kotlin\\day11\\save.txt", "C:\\koko\\winter_kotlin_study\\src\\main\\kotlin\\day11\\saveCopy.txt")
 }
 
 class DefaultFileOperations: FileOperations {
@@ -15,8 +17,25 @@ class DefaultFileOperations: FileOperations {
         try{
             val original = File(sourcePath)
             val copy = File(targetPath)
-            copy.writeText(original.readText())
+
+            val nameDuplication = if (copy.exists()) {
+                val newFileName = "${copy.nameWithoutExtension}_copy.${copy.extension}"
+                File(copy.parent, newFileName).absolutePath
+                // nameWithoutExtension 확장자 떼고 파일명만 가져온다
+                // extension 확장자를 가져온다
+                // copy.parent는 대상 파일의 부모 디렉토리를 반환
+                // .absoluteFile 절대경로 반환
+
+            } else {
+                targetPath
+            }
+
+            File(nameDuplication).writeText(original.readText())
+            println(nameDuplication)
+
         } catch (e: FileNotFoundException) {
+            println(e.message)
+        } catch (e: Exception) {
             println(e.message)
         }
     }
