@@ -5,11 +5,11 @@ import java.io.FileNotFoundException
 
 
 fun main() {
-    val sample = File("C:\\koko\\winter_kotlin_study\\src\\main\\kotlin\\day11\\save.txt")
+    val sample = File("C:\\koko\\winter_kotlin_study\\src\\main\\kotlin\\day11\\test.txt")
     val text = "뿌이뿌이뿌"
     sample.writeText(text)
     val file = DefaultFileOperations()
-    file.copy("C:\\koko\\winter_kotlin_study\\src\\main\\kotlin\\day11\\save.txt", "C:\\koko\\winter_kotlin_study\\src\\main\\kotlin\\day11\\saveCopy.txt")
+    file.copy("C:\\koko\\winter_kotlin_study\\src\\main\\kotlin\\day11\\test.txt", "C:\\koko\\winter_kotlin_study\\src\\main\\kotlin\\day11\\testCopy.txt")
 }
 
 class DefaultFileOperations: FileOperations {

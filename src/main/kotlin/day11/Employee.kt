@@ -22,19 +22,8 @@ fun main() {
 }
 
 @Serializable
-data class Employee (val name: String, val age: Int) {
-    fun toJson(): String = """
-        "name": "$name",
-        "age": "$age"
-    """.trimIndent()
-}
+data class Employee (val name: String, val age: Int)
 
 @Serializable
-data class Department(var name: String, var leader: Employee) {
-    fun toJson(): String = """
-        "name": "$name",
-        "leader": "${leader.toJson()}"
-    """.trimIndent()
-}
-
+data class Department(var name: String, var leader: Employee)
 
