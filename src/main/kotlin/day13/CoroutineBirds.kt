@@ -8,9 +8,11 @@ package day13
 // 10초 후에 모든 실행 중인 코루틴을 취소하는 메커니즘을 추가
 
 import kotlinx.coroutines.*
+import kotlin.coroutines.coroutineContext
 
 suspend fun kkou() {
     while (true) {
+        coroutineContext.ensureActive() // 현재 코루틴 컨텍스트가 활성 상태인지 확인
         println("꾸우")
         delay(1000)
     }
@@ -18,6 +20,7 @@ suspend fun kkou() {
 
 suspend fun kkack() {
     while (true) {
+        coroutineContext.ensureActive()
         println("까악")
         delay(2000)
     }
@@ -25,6 +28,7 @@ suspend fun kkack() {
 
 suspend fun jjack() {
     while (true) {
+        coroutineContext.ensureActive()
         println("짹짹")
         delay(3000)
     }

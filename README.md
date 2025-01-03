@@ -93,7 +93,7 @@
   - [ExamCallback3.kt](src/main/kotlin/day12/ExamCallback3.kt) - 콜백함수 예제_람다
   - [LambdaQuery.kt](src/main/kotlin/day12/LambdaQuery.kt) - 람다식 연습문제
 - Day 13    
-- [Sample.kt](src/main/kotlin/day13/LambdaQuery.kt) - Thread Block 예제
+- [Sample.kt](src/main/kotlin/day13/Sample.kt) - Thread Block 예제
 - [WeatherLegacy.kt](src/main/kotlin/day13/WeatherLegacy.kt) - Thread 싱글톤 예제
 - [WeatherCallback.kt](src/main/kotlin/day13/WeatherCallback.kt) - callback 예제
 - [WeatherCoroutine.kt](src/main/kotlin/day13/WeatherCoroutine.kt) - coroutine 예제
