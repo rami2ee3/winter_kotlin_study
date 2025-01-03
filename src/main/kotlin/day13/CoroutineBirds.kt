@@ -42,33 +42,5 @@ fun main() = runBlocking {
 }
 
 
-//fun main() = runBlocking {
-//    val job = launch {
-//        val time = measureTimeMillis {
-//            val result1 = kkou()
-//            val result2 = kkack()
-//            val result3 = jjack()
-//        }
-//        if (time >= 10000) {
-//            cancel()
-//        }
-//    }
-//}
-//---------------------------------------------
-//fun main() {
-//    runBlocking {
-//        val job: Job = launch {
-//            launch { kkou() }
-//            launch { kkack() }
-//            launch { jjack() }
-//        }
-//        job.cancel()
-//    }
-//}
 
-//fun main():Unit = runBlocking {
-//    launch { kkou() }
-//    launch { kkack() }
-//    launch { jjack() }
-//}
 
