@@ -91,6 +91,7 @@
   - [ExamCallback3.kt](src/main/kotlin/day12/ExamCallback3.kt) - 콜백함수 예제_람다
   - [LambdaQuery.kt](src/main/kotlin/day12/LambdaQuery.kt) - 람다식 연습문제
 - Day 13    
+
 ## 📚 주제별 정리
 - [Git](docs/topics/Git.md) - 깃
 - [kotlin](docs/topics/kotlin.md) - 코틀린
