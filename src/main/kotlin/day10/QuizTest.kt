@@ -24,6 +24,11 @@ data class Point(val x: Int)
 
 data class Team(val name: String, val members: MutableList<String>)
 
+data class Hero2(val name: String, val hp: Int)
+
+class NomalPerson(val name: String, val age: Int) // 일반 클래스
+data class DataPerson(val name: String, val age: Int) // 데이터 클래스
+
 fun main() {
     println(p1 == p2) // true
                       // 왜냐하면 data class는 equals() 메소드가 자동으로 오버랑디이 돼서, 모든 속성 (name과 age)값이 동일하면 두 인스턴스를 같은 것으로 판단한다 : 객체의 동등성 비교
@@ -105,6 +110,45 @@ fun main() {
     val team2 = team1.copy()    // team1을 얕은 복사
     team2.members.add("Lee")
     println(team1.members.size)     // 2.    team1과 team2는 같은 members 리스트를 참조하므로, team1의 멤버 목록에도 "Lee"가 추가된다
+    println("--------------------------------")
+
+    val heroes = mutableListOf<Hero2>()     // List는 중복을 허용하므로 h1과 h2가 같은 값을 가지더라도 모두 추가될 수 있다.
+    val h1 = Hero2("슈퍼맨", 100)
+    val h2 = Hero2("슈퍼맨", 100)
+
+    heroes.add(h1)
+    println(heroes.size) // 1
+
+    heroes.remove(h2)
+    println(heroes.size) // 0       -> h1과 같은 객체를 찾아 제거하기 때문에 리스트의 크기는 0이 된다.
+                                     // Hero가 일반클래스일 경우엔 동일한 참조를 가진 객체가 리스트에 없으므로 제거에 실패해서 1로 나온다.
+
+    println(h1 == h2)   // true
+    println(h1 === h2)  // false
+
+    val heroes2 = mutableSetOf<Hero2>()      //set은 중복을 허용하지 않음
+    heroes2.add(h1)
+    heroes2.add(h2)
+    println(heroes2.size)    // 1           // Hero2가 일반클래스일 경우엔 2로 나옴. 이유는 일반 클래스에서 객체 비교는 참조 비교를 사용하므로 h1과 h2가 다른 객체로 간주돼서 두번 모두 추가되기 때문이다.
+    heroes2.remove(h2)
+    println(heroes2.size)    // 0
+
+    println(h1 == h2)        // true
+    println(h1 === h2)       // false
+    println("--------------------------------")
+
+
+    val person1 = NomalPerson("슈퍼맨", 10)
+    val person2 = NomalPerson("슈퍼맨", 10)
+    val dataPerson1 = DataPerson("슈퍼맨", 10)
+    val dataPerson2 = DataPerson("슈퍼맨", 10)
+
+    println(person1 === person2) // false (다른 객체를 참조)
+    println(person1 == person2) // false (equals()를 오버라이드하지 않았으므로 참조 비교)
+
+    println(dataPerson1 === dataPerson2) // false (다른 객체를 참조)
+    println(dataPerson1 == dataPerson2) // true (equals()가 자동으로 생성되어 값 비교)
+    println("--------------------------------")
 
 }
 
