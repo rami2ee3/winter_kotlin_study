@@ -2,9 +2,8 @@ import day14.TodoUserDataSourceImpl
 import kotlinx.coroutines.runBlocking
 import org.junit.Test
 import kotlin.test.assertEquals
-import kotlin.test.assertTrue
 
-class TodoUserDataSourceImplTest {
+class UserDataSourceImplTest {
 
  @Test
  fun checkUsers() = runBlocking {

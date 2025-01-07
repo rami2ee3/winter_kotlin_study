@@ -1,12 +1,11 @@
 package day14
 
 import kotlinx.coroutines.runBlocking
-import org.junit.Assert.*
 import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-class TodoDataSourceImplTest {
+class DataSourceImplTest {
 
     @Test
     fun checkExist() {
