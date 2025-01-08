@@ -20,7 +20,7 @@ dependencies {
     testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.2")
     testImplementation ("org.junit.jupiter:junit-jupiter-api:5.10.0")
     testImplementation ("org.junit.jupiter:junit-jupiter-engine:5.10.0")
-
+    implementation ("net.bytebuddy:byte-buddy:1.12.21")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1")
     implementation("ch.qos.logback:logback-classic:1.5.6")
@@ -40,3 +40,4 @@ tasks.withType<KotlinCompile> {
 application {
     mainClass.set("MainKt")
 }
+

@@ -7,13 +7,13 @@ import io.ktor.client.statement.*
 import kotlinx.coroutines.runBlocking
 // Ktor 를 활용한 실제 통신
 fun main():Unit = runBlocking {
-    val httpClient = HttpClientFactory.creat()
+    val httpClient = HttpClientFactory.create()
     val response = httpClient.get("https://jsonplaceholder.typicode.com/posts/1")
     println(response.bodyAsBytes())
 }
 
 object HttpClientFactory {
-    fun creat(): HttpClient = HttpClient(CIO)
+    fun create(): HttpClient = HttpClient(CIO)
 }
 
 
