@@ -7,6 +7,7 @@ import day17.model.Pharmacy
 class MaskStoreRepositoryImpl(
     private val dataSource: MaskStoreDataSource
 ) : MaskStoreRepository {
+
     override suspend fun getValidStore(): List<Pharmacy> {
         val maskStoreDto = dataSource.getStores()
         val store = maskStoreDto.stores ?: return emptyList()

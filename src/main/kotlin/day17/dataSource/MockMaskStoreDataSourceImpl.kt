@@ -4,8 +4,8 @@ import day17.dto.MaskStoreDto
 import day17.dto.Pharmacy
 
 class MockMaskStoreDataSourceImpl : MaskStoreDataSource {
-    override suspend fun getStores(): MaskStoreDto {
-        val dummyStores = listOf(
+    companion object {
+        private val dummyStores = listOf(
             Pharmacy(
                 addr = "서울특별시 강북구 솔매로 38 (미아동)",
                 code = "11817488",
@@ -29,14 +29,12 @@ class MockMaskStoreDataSourceImpl : MaskStoreDataSource {
                 type = "01"
             )
         )
-        return MaskStoreDto(
-            count = dummyStores.size,
-            stores = dummyStores
-        )
     }
+    override suspend fun getStores(): MaskStoreDto = MaskStoreDto(
+        count = dummyStores.size,
+        stores = dummyStores
+    )
 
-    override suspend fun getStore(name: String): Pharmacy? {
-        val matchedStore = getStores().stores?.find { it.name == name }
-        return matchedStore
-    }
+    override suspend fun getStore(name: String): Pharmacy? = Companion.dummyStores.find { it.name == name }
+
 }

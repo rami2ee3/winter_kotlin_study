@@ -33,5 +33,6 @@ class PhotoRepositoryImplTest {
 
     }
 }
-//todo 날짜 없는 경우
-//todo type이 선택지에 없는 경우
+//todo 실패 케이스 - 날짜 없는 경우, 잘못된 경우
+//todo 경계값 테스트 - 빈 결과, 최대 길이
+//todo 다양한 타입에 대한 테스트 - type이 선택지에 없는 경우

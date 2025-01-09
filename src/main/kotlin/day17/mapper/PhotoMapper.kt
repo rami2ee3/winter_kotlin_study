@@ -8,7 +8,7 @@ import java.time.format.DateTimeFormatter
 import java.util.*
 
 private val dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
-fun PhotoMapper(dto: PhotoDto): DomainPhoto {
+fun photoMapper(dto: PhotoDto): DomainPhoto {
     val type = when (dto.type?.lowercase(Locale.getDefault())) {
         "article" -> PhotoType.Article
         "image" -> PhotoType.Image
@@ -20,6 +20,7 @@ fun PhotoMapper(dto: PhotoDto): DomainPhoto {
         try {
             LocalDate.parse(it, dateFormatter)
         } catch (e: Exception) {
+            println("날짜 파싱 실패: $it, 오류: ${e.message}")
             null
         }
     }
