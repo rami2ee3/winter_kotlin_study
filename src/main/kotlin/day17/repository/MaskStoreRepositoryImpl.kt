@@ -1,7 +1,7 @@
 package day17.repository
 
 import day17.dataSource.MaskStoreDataSource
-import day17.mapper.PharmacyMapper
+import day17.mapper.maskMapper
 import day17.model.Pharmacy
 
 class MaskStoreRepositoryImpl(
@@ -13,6 +13,6 @@ class MaskStoreRepositoryImpl(
 
         return store
             .filter { !it.remainStat.isNullOrEmpty() && !it.stockAt.isNullOrEmpty() && !it.createdAt.isNullOrEmpty() }
-            .map { PharmacyMapper.mapToDomain(it) }  // 필터링 된 데이터를 PharmacyMapper를 통해 도메인 모델인 Pharmacy로 변환
+            .map { maskMapper(it) }  // 필터링 된 데이터를 PharmacyMapper를 통해 도메인 모델인 Pharmacy로 변환
     }
 }
