@@ -11,7 +11,6 @@ import org.example.day19.model.User
  * 인증 관련 기능을 제공하는 repository
  */
 interface AuthRepository {
-    val dataSource: UserDataSource
 
     /**
      * 로그인

@@ -38,7 +38,7 @@ data class Team2(val name: String, val members: MutableList<String>) {
 
 fun main() {
     println(p1 == p2) // true
-                      // 왜냐하면 data class는 equals() 메소드가 자동으로 오버랑디이 돼서, 모든 속성 (name과 age)값이 동일하면 두 인스턴스를 같은 것으로 판단한다 : 객체의 동등성 비교
+                      // 왜냐하면 data class는 equals() 메소드가 자동으로 오버라이딩 돼서, 모든 속성 (name과 age)값이 동일하면 두 인스턴스를 같은 것으로 판단한다 : 객체의 동등성 비교
     println("--------------------------------")
 
     val books = listOf(

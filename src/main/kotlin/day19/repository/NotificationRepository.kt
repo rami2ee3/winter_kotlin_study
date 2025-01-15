@@ -4,7 +4,6 @@ import org.example.day19.data_source.NotificationDataSource
 import org.example.day19.model.Notification
 
 interface NotificationRepository {
-    val notiDataSource: NotificationDataSource
 
     /**
      * 모든 알림을 가져온다.

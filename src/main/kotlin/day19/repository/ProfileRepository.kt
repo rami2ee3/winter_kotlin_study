@@ -10,8 +10,6 @@ import org.example.day19.model.User
  * 프로필 관련 데이터를 가져오는 repository
  */
 interface ProfileRepository {
-    val userDataSource: UserDataSource
-    val recipeDataSource: RecipeDataSource
 
     /**
      * 유저 정보를 가져온다.
